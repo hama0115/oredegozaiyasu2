@@ -23,5 +23,7 @@ function enqueue_scripts() {
   wp_enqueue_style('main-css', get_stylesheet_uri());
   //ハンバーガーメニューの読み込み
   wp_enqueue_script('hamburger-menu', get_stylesheet_directory_uri() . '/js/btn-menu.js', [], '1.0', true);
+  //adobeフォントの読み込み
+  wp_enqueue_script('adobefont', get_stylesheet_directory_uri() . '/js/adobefont.js', [], '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
