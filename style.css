@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 
-Theme Name: ふとんテーマ for oredegozaiyasu
-Description: ふとんの気持ちよさを目指すテーマ おれでございやすver
+Theme Name: ふとんテーマ for oredegozaiyasu2
+Description: 快適な気持ちよさを求めるふとんテーマ(ございやすver)
 Version: 1.0
 Author: A.Akiyoshi
 */
@@ -48,7 +48,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
  body {
    font-family: dnp-shuei-gothic-gin-std, sans-serif;
    font-style: normal;
-   font-weight: 500;
+   font-weight: 400;
    font-size: 16px;
    color: #000000;
    line-height: 1.5;
@@ -63,7 +63,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
  .article-title {
    font-family: dnp-shuei-gothic-gin-std, sans-serif;
    font-style: normal;
-   font-weight: 600;
+   font-weight: 500;
  }
  
  img {
@@ -199,6 +199,30 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
  .category-list li:not(.category-list li:first-child) {
    margin-left: 1em;
  }
+
+ /*-- ページネーション --*/
+ .nav-links {
+  text-align: center;
+  padding: 0.5em;
+  color: #A0D8EF;
+  max-width: 400px;
+  margin: 2em auto;
+ }
+ .page-numbers {
+  display: inline-block;
+  padding: 0.2em 0.5em; 
+  margin: 0 3px;
+  background-color: #fff;
+  border: solid 1px #A0D8EF;
+ }
+ a.page-numbers:hover {
+  color: #fff;
+  background-color: #A0D8EF;
+ }
+ .page-numbers.current {
+  color: #000;
+  border: solid 1px #000;
+ }
  
  /*-- プロフィール欄 --*/
  
@@ -231,6 +255,8 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
  .profile-description {
    margin-top: 1em;
    line-height: 2;
+   max-width: 500px;
+   margin: 2em auto;
  }
  
  /*-- 個別投稿ページ --*/
@@ -316,12 +342,7 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
  .latest-pages ul li {
    margin: 0.625em 0.625em 0 1em ;
  }
-
- /* プロフィール情報のエリア */
- .profile-description {
-  max-width: 500px;
-  margin: 2em auto;
- }
+ 
  
  /* ========================
  フッター
