@@ -70,6 +70,31 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
    max-width: 100%;
    height: auto;
  }
+
+ /* ========================
+ コンポーネント
+ ======================== */
+
+/*---- ボタン ----*/
+.btn-area {
+  margin: 2em 0;
+}
+.page-btn {
+  display: block;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  background-color: #A0D8EF;
+  color: #fff;
+  border: solid 1px #A0D8EF; 
+  border-radius: 20px;
+  font-size: 1rem;
+  transition-duration: 0.3s;
+}
+.page-btn:hover {
+  background-color: #fff;
+  color: #A0D8EF;
+  border: solid 1px #A0D8EF; 
+}
  
  /* ========================
  ヘッダー
@@ -229,6 +254,9 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
  
  /*-- プロフィール欄 --*/
  
+ .profile-area {
+   margin: 1em 0;
+ }
  .profile-top {
    text-align: center;
    font-size: 1.5rem;
@@ -356,12 +384,32 @@ marginは基本はtopにかけるが、デザインの都合上ボトムにか�
    color: #fff;
    background-color: #A0D8EF;
  }
- .footer a {
+ .footer-logo {
    font-size: 1.5rem;
  }
  .copyright {
    font-size: 1rem;
    margin-top: 1rem;
+ }
+
+ /*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/
+ .footer .archive-block {
+  margin: 1em 0;
+ }
+ .footer .yearly-archive li {
+  font-size: 1rem;
+ }
+
+ /* ========================
+ サイドバー
+ ======================== */
+
+ /*-- 記事アーカイブ --*/
+ .yearly-archive li {
+  margin: 0.5em 0;
+ }
+ .yearly-archive li::before {
+  content: '・';
  }
 
 /*---- プラグイン(本から基本はコードを拝借。本のコードは、プラグイン本体のコードをある程度そのまま上書きしているよう) ----*/
@@ -550,6 +598,25 @@ a .nav-title,
      max-width: 85%;
      height: auto;
    }
+
+   /* ========================
+   コンポーネント
+   ======================== */
+
+   /*---- ボタン ----*/
+   .btn-area {
+     margin: 2em 0;
+   }
+   .page-btn {
+     display: block;
+     padding: 0.5em 1em;
+     margin: 0 auto;
+     background-color: #A0D8EF;
+     color: #fff;
+     border: solid 1px #A0D8EF; 
+     border-radius: 30px;
+     font-size: 1.5rem;
+   }
  
    /* ========================
    ヘッダー
@@ -636,6 +703,23 @@ a .nav-title,
    /* 最新の記事エリア */
     .latest-pages-title {
      font-size: 1.5rem;
+   }
+
+   /* ========================
+   フッター
+   ======================== */
+
+   /*-- フッターのアーカイブ表示(サイドバーにもアーカイブブロックあり。共通の記述はそちらへ) --*/   
+   .archive-block h3 {
+     font-size: 1.5rem;
+   }
+   .footer .yearly-archive {
+     display: flex;
+     justify-content: center;
+     gap: 1em;
+   }
+   .footer .yearly-archive li {
+    font-size: 1.3rem;
    }
  
  }

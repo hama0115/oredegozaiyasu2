@@ -1,5 +1,11 @@
     <footer class="footer">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="footer-logo"><?php bloginfo('name'); ?></a>
+      <div class="archive-block">
+        <h3>過去のアーカイブ</h3>
+        <ul class="yearly-archive">
+          <?php wp_get_archives('type=yearly'); ?>
+        </ul>
+      </div>
       <p class="copyright"><?php echo $_SERVER['HTTP_HOST']; ?> all right reserved.</p>
     </footer>
 
