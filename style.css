@@ -11,6 +11,7 @@ SPファーストで記述
 メディアクエリは後半にまとめている
 marginは基本はtopにかけるが、デザインの都合上ボトムにかけたい場合は「margin-bottom」を使う
 優先順位は、プラグイン自体のCSS→style.cssであることに注意(自分のCSSでプラグインのCSSを打ち消していないか要確認)
+最初に静的ファイルを作成してwordpressでオリジナルテーマを作成している。ベースを作ってwordpressに移行した後は、wordpress特有のクラスにCSSを追加していることもある
 */
 
 /* ========================
@@ -94,14 +95,6 @@ img {
   background-color: #fff;
   color: #A0D8EF;
   border: solid 1px #A0D8EF; 
-}
-
-/*---- パンくずリスト ----*/
-.breadcrumb-inner {
-  font-size: 0.625rem;
-}
-.fa-circle-chevron-right::before {
-  color: #74c0fc;
 }
  
 /* ========================
@@ -299,6 +292,8 @@ border: solid 1px #000;
 }
 
 /*-- 個別投稿ページ --*/
+
+/* */
  
 /* タイトルエリア */
 .single-article .article-title {
@@ -312,9 +307,6 @@ border: solid 1px #000;
 /* カテゴリのCSSはアーカイブページのほうでベースを調節しているので注意 */
 .single-article .category-list {
   margin: 0.5em 0 0.5em 0.5em;
-}
-.single-article .category {
-  padding: 0 1em;
 }
 
 /* アイキャッチエリア */
@@ -469,6 +461,22 @@ pre.wp-block-verse {
   padding: 1em;
   margin: 2em 0;
 }
+
+/* ========================
+wordpressの装飾
+======================== */
+
+/*---- 動画のキャプション ----*/
+.wp-element-caption {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #c0c0c0;
+}
+/* wpデフォルトのmarginを消す */
+.wp-block-embed :where(figcaption) {
+  margin-top: 0;
+}
+
 
 
 /* ========================
@@ -643,41 +651,63 @@ a .nav-title,
 }
 
 /* end：プラグイン｜WordPress Popular Posts */
- 
- @media screen and (min-width: 768px) {
- 
-   /* ========================
-   全体
-   ======================== */
- 
-   /* 基本フォントをPCサイズでは大きく */
-   body {
-     font-size: 18px;
-   }
- 
-   .single-article img {
-     max-width: 85%;
-     height: auto;
-   }
+/* start：プラグイン｜Breadcrumb navXT*/
 
-   /* ========================
-   コンポーネント
-   ======================== */
+.breadcrumb-inner {
+  font-size: 0.875rem;
+}
+.breadcrumb-inner .fas {
+  margin: 0 0.5em;
+}
+.theme-color {
+  color: #A0D8EF;
+}
 
-   /*---- ボタン ----*/
-   .btn-area {
-     margin: 2em 0;
-   }
-   .page-btn {
-     display: block;
-     padding: 0.5em 1em;
-     margin: 0 auto;
-     background-color: #A0D8EF;
-     color: #fff;
-     border: solid 1px #A0D8EF; 
-     border-radius: 30px;
-     font-size: 1.5rem;
-   }
+/* 個別投稿ページでは現在の記事が表示されないようにする */
+.single-post .breadcrumb .current-item {
+  display: none;
+}
+/* 最後のfontasesomeを非表示にする */
+.single-post .breadcrumb .fas:last-of-type {
+  display: none;
+}
+
+/* end：プラグイン｜Breadcrumb navXT */
+ 
+@media screen and (min-width: 768px) {
+ 
+  /* ========================
+  全体
+  ======================== */
+ 
+  /* 基本フォントをPCサイズでは大きく */
+  body {
+    font-size: 18px;
+  }
+ 
+  .single-article img {
+    max-width: 85%;
+    height: auto;
+  }
+
+  /* ========================
+  コンポーネント
+  ======================== */
+
+  /*---- ボタン ----*/
+  .btn-area {
+    margin: 2em 0;
+  }
+  .page-btn {
+    display: block;
+    padding: 0.5em 1em;
+    margin: 0 auto;
+    background-color: #A0D8EF;
+    color: #fff;
+    border: solid 1px #A0D8EF; 
+    border-radius: 30px;
+    font-size: 1.5rem;
+  }
  
    /* ========================
    ヘッダー
@@ -806,5 +836,29 @@ a .nav-title,
    pre.wp-block-verse {
     text-align: center;
    }
+
+  /* ========================
+  wordpressの装飾
+  ======================== */
+
+  /*---- 動画のキャプション ----*/
+  .wp-element-caption {
+    font-size: 1rem;
+  }
+
+  /* ========================
+  プラグイン
+  ======================== */
+
+  /* start：プラグイン｜Breadcrumb navXT*/
+
+  .breadcrumb-inner {
+    font-size: 1rem;
+  }
+  .breadcrumb-inner .fas {
+    margin: 0 0.5em;
+  }
+  /* end：プラグイン｜Breadcrumb navXT */
+
  
- }
+}
